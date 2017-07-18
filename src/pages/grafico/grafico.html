@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="cyan">
+
+    <ion-title text-center>Gráficos</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-left>
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+     <ion-card *ngIf="grafColuna">
+      <ion-card-content>
+        <canvas #barCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="grafLinha">
+      <ion-card-content>
+        <canvas #lineCanvas></canvas>
+      </ion-card-content>
+    </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button (click)="doSalvarPdf()" ion-button color="cyan" round outline block>Enviar para meu E-mail</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-navbar color="cyan">
+
+    <ion-title text-center>Relatórios</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-left>
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+      <h4 text-center>Data</h4>
+      <ion-list>
+        <ion-item>
+          <ion-label>Ano Inicial</ion-label>
+          <ion-select [(ngModel)]="ano">
+            <ion-option value=2007>2007</ion-option>
+            <ion-option value=2008>2008</ion-option>
+            <ion-option value=2009>2009</ion-option>
+            <ion-option value=2010>2010</ion-option>
+            <ion-option value=2011>2011</ion-option>
+            <ion-option value=2012>2012</ion-option>
+            <ion-option value=2013>2013</ion-option>
+            <ion-option value=2014>2014</ion-option>
+            <ion-option value=2015>2015</ion-option>
+            <ion-option value=2016>2016</ion-option>
+            <ion-option value=2017>2017</ion-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>Ano Final</ion-label>
+          <ion-select [(ngModel)]="anoFinal">
+            <ion-option value=2007>2007</ion-option>
+            <ion-option value=2008>2008</ion-option>
+            <ion-option value=2009>2009</ion-option>
+            <ion-option value=2010>2010</ion-option>
+            <ion-option value=2011>2011</ion-option>
+            <ion-option value=2012>2012</ion-option>
+            <ion-option value=2013>2013</ion-option>
+            <ion-option value=2014>2014</ion-option>
+            <ion-option value=2015>2015</ion-option>
+            <ion-option value=2016>2016</ion-option>
+            <ion-option value=2017>2017</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+</ion-grid>
+
+<ion-grid>
+    <ion-list-header>
+      <ion-label>Mês a Mês</ion-label>
+      <ion-checkbox color="cyan" checked="{{mesMes}}" (ionChange)="mesSwift()"></ion-checkbox>
+    </ion-list-header>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>{{mesInicialString}}</ion-label>
+        <ion-select [(ngModel)]="inicio">
+          <ion-option value=0>Janeiro</ion-option>
+          <ion-option value=1>Fervereiro</ion-option>
+          <ion-option value=2>Março</ion-option>
+          <ion-option value=3>Abril</ion-option>
+          <ion-option value=4>Maio</ion-option>
+          <ion-option value=5>Junho</ion-option>
+          <ion-option value=6>Julho</ion-option>
+          <ion-option value=7>Agosto</ion-option>
+          <ion-option value=8>Setembro</ion-option>
+          <ion-option value=9>Outubro</ion-option>
+          <ion-option value=10>Novembro</ion-option>
+          <ion-option value=11>Dezembro</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Mês Final</ion-label>
+        <ion-select [disabled]="!mesMes" [(ngModel)]="fim">
+          <ion-option value=0>Janeiro</ion-option>
+          <ion-option value=1>Fervereiro</ion-option>
+          <ion-option value=2>Março</ion-option>
+          <ion-option value=3>Abril</ion-option>
+          <ion-option value=4>Maio</ion-option>
+          <ion-option value=5>Junho</ion-option>
+          <ion-option value=6>Julho</ion-option>
+          <ion-option value=7>Agosto</ion-option>
+          <ion-option value=8>Setembro</ion-option>
+          <ion-option value=9>Outubro</ion-option>
+          <ion-option value=10>Novembro</ion-option>
+          <ion-option value=11>Dezembro</ion-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+</ion-grid>
+
+<ion-list radio-group>
+  <h4 text-center>Tipo de Gráfico</h4>
+  <ion-item>
+    <ion-label>Coluna</ion-label>
+    <ion-toggle value="Coluna" [(ngModel)]="graficoColuna"></ion-toggle>
+  </ion-item>
+  <ion-item>
+    <ion-label>Linha</ion-label>
+    <ion-toggle value="Linha" [(ngModel)]="graficoLinha"></ion-toggle>
+  </ion-item>
+</ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button (click)="doGrafico()" [disabled]="(graficoLinha == false && graficoColuna == false) ? true : false" ion-button color="cyan" round outline block>Pesquisar</button>
+  </ion-toolbar>
+</ion-footer>

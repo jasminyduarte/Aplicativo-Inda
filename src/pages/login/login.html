@@ -1,0 +1,46 @@
+<ion-content class="padding">
+  <ion-card-header style="text-align: center">
+   <img src="assets/img/logo.png">
+  </ion-card-header>
+
+<ion-card-content>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating="">
+            Email
+          </ion-label>
+          <ion-input [(ngModel)]="usuario.email" id="usuario" type="email"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label floating="">
+            Senha
+          </ion-label>
+          <ion-input [(ngModel)]="usuario.senha" id="senha" type="password"></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <button round (click)="LoginComCredencial()" ion-button color="cyan" full>Login</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col text-center>
+        <button outline round (click)="doVisitante()" ion-button color="blue" small>Visitante</button>
+        <button outline round (click)="doEsqueci()" ion-button color="blue" small>Esqueci a Senha</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-card-content>
+
+</ion-content>

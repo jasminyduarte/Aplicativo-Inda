@@ -1,0 +1,52 @@
+<!--
+  Generated template for the ModalidadePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="cyan">
+    <ion-title text-center>Modalidade</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-left>
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-card-header>
+      Selecione  
+    </ion-card-header>
+
+  <ion-list>
+    <button (click)="selecionarProdutos('compras')" ion-item>
+      <ion-icon name="stats" color="primary" item-start></ion-icon>
+      Compras
+    </button>
+
+    <button (click)="selecionarProdutos('vendas')" ion-item>
+      <ion-icon name="cart" color="primary" item-start></ion-icon>
+      Vendas
+    </button>
+
+    <button (click)="selecionarProdutos('estoques')" ion-item>
+      <ion-icon name="archive" color="primary" item-start></ion-icon>
+      Estoques
+    </button>
+
+    <button (click)="selecionarProdutos('importacoes')" ion-item>
+      <ion-icon name="pie" color="primary" item-start></ion-icon>
+      Importações
+    </button>
+
+  </ion-list>
+</ion-card>
+
+</ion-content>

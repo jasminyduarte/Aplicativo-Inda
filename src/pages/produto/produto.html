@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="cyan" >
+    <ion-title text-center>Produtos</ion-title>
+
+    <ion-buttons end>
+      <button (click)="sair()" ion-button icon-left>
+          <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      <h2 ion-text color="default" text-center>Selecione os Produtos</h2>
+    </ion-list-header>
+
+    <ion-item *ngFor=" let produto of lista_produto">
+      <ion-label color="teal">{{ produto.produto }}</ion-label>
+      <ion-toggle [(ngModel)]="produto.checked" checked="{{produto.checked}}" (ionChange)="itemClicked(produto.id, produto.checked)"></ion-toggle>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <button (click)="doPesquisa()" [disabled]="contProdutos > 0 ? false : true" ion-button color="cyan" round outline block>Selecionar Data</button>
+  </ion-toolbar>
+</ion-footer>
